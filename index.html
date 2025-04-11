@@ -238,25 +238,6 @@
             font-size: large;
         }
 
-        #ballsCon {
-            width: 100%;
-            height: 100vh;
-            border: 2px solid black;
-            position: relative;
-            overflow: hidden;
-            margin: 20px auto;
-        }
-
-        .ball {
-            width: 100px;
-            height: 100px;
-            background-color: #ff0000;
-            border-radius: 50%;
-            position: absolute;
-            left: 50px;
-            top: 50px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        }
 
         .skillcon {
             padding-top: 10vh;
@@ -305,10 +286,8 @@
         </ul>
         <ul class="navUlContact">
             <li id="emailLi" onclick="copy('kishansingh222004@gmail.com')"><img src="images/email (1).png">
-                <p class="email">kishansingh222004@gmail.com</p>
             </li>
             <li id="phonenumberLi" onclick="copy('9056969578')"><img src="images/phone-call.png">
-                <p class="phonenumber">+91 9056969578</p>
             </li>
         </ul>
     </nav>
@@ -590,6 +569,22 @@
             }
         }
         
+
+
+
+
+
+
+        let emailEl = document.createElement("p");
+        emailEl.className = "email";
+        emailEl.innerText = "kishansingh222004@gmail.com";
+        document.getElementById("emailLi").appendChild(emailEl);
+
+        
+        let numberEl = document.createElement("p");
+        numberEl.className = "phonenumber";
+        numberEl.innerText = "9056969578";
+        document.getElementById("phonenumberLi").appendChild(numberEl);
     </script>
 </body>
 
