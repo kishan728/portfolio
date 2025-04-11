@@ -283,16 +283,13 @@
         }
         function goonprojects() {
             let El = document.getElementById("portfolio-div");
-            let height = El.scrollHeight / 3;
-            console.log(height);
-
-            El.scrollTo({ top: height, left: 0, behavior: "smooth" });
+            let frams = document.getElementsByClassName("bgframe");
+            El.scrollTo({ top: frams[1].offsetTop, left: 0, behavior: "smooth" });
         }
         function goonskills() {
             let El = document.getElementById("portfolio-div");
-            let height = El.scrollHeight;
-            console.log(El.scrollHeight);
-            El.scrollTo({ top: height * 2, left: 0, behavior: "smooth" });
+            let frams = document.getElementsByClassName("bgframe");
+            El.scrollTo({ top: frams[2].offsetTop, left: 0, behavior: "smooth" });
         }
 
 
