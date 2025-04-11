@@ -297,19 +297,6 @@
 </head>
 
 <body>
-    <!-- <div>
-        <div class="el" id="el1" style="height: 30px; width: 200px;"></div>
-        <div class="el" id="el2" style="height: 200px; width: 30px;"></div>
-    </div> -->
-    <!-- <div style="bottom: 0; right: 0; position: fixed; z-index: 3;">
-        <div style="left:170px; position: relative;height: 170px; width: 30px; z-index: 1000; background-color: blueviolet;"></div>
-        <div style="position: relative;height: 30px; width: 200px; z-index: 1000; background-color: blueviolet;"></div>
-        
-    </div> -->
-    <!-- <div id="object-div">
-        <div id="object"></div>
-        
-    </div> -->
     <nav id="navdiv">
         <ul class="navul">
             <li onclick="goonprofile()">Profile</li>
@@ -325,19 +312,6 @@
             </li>
         </ul>
     </nav>
-    <!-- <div id="frame-div" style="overflow-y: hidden; position:fixed; height: 100%;width: 100%; z-index: 2;">
-        <div class="frame frame-1">
-            <div class="introdiv">
-
-                <h2 id="welcome">WELCOME</h2>
-                <p id="intro"><b>Self-taught</b> full stack/backend developer with a strong foundation in ethical hacking, networking, and scriptingsince 2020. With a deep interest in web application security and system internals, I transitioned into full stackdevelopment—strengthening my skills in backend, database, and frontend technologies. My hacking backgroundenables me to build secure, efficient APIs and applications with a solid understanding of vulnerabilities andsystem architecture. Passionate about creating clean, maintainable, and scalable solutions.</p>
-            </div>
-        </div>
-        <div class="frame frame-2">
-        </div>
-        <div class="frame frame-3">
-        </div>
-    </div> -->
     <div id="portfolio-div" style="
         background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, black 70%),
           url(img1.png);
@@ -345,18 +319,6 @@
         background-color: black;
       ">
         <div class="bgframe">
-            <!-- <div id="skilldiv">
-                <p>Frontend</p>
-                <p>Backend</p>
-                <p>Database</p>
-                <p>Tools</p>
-            </div> -->
-            <!-- <div id="ballsCon">
-                <div class="ball"></div>
-                <div class="ball"></div>
-                <div class="ball"></div>
-                <div class="ball"></div>
-            </div> -->
 
             <div class="introdiv">
 
@@ -588,181 +550,6 @@
     <script>
         var winHeight = window.innerHeight;
         var maindiv = document.getElementById("portfolio-div");
-        var frameDiv = document.getElementById("frame-div");
-        var frames = document.getElementsByClassName("frame");
-
-        // maindiv.style.height = String(winHeight) + "px";
-        // window.onresize = () => {
-        //     winHeight = window.innerHeight;
-        //     maindiv.style.height = String(winHeight) + "px";
-        // }
-        maindiv.addEventListener("scroll", (e) => {
-            let txtEl = document.getElementById("intro");
-            let txtInnerHtml = txtEl.innerHTML.toString();
-            txtInnerHtml = txtInnerHtml.replace("<b>", "");
-            txtInnerHtml = txtInnerHtml.replace("</b>", "");
-
-            txtEl.innerHTML = txtInnerHtml;
-
-            let p = parseInt(window.pageYOffset / winHeight) + 1;
-            let r = window.pageYOffset % winHeight;
-            let ob = document.getElementById("object");
-            let obdiv = document.getElementById("object-div");
-            let el1 = document.getElementById("el1");
-            let el2 = document.getElementById("el2");
-            let check = false;
-            if (r == 0) {
-                p -= 1;
-                check = true;
-                frameDiv.scrollTo({
-                    top: p * winHeight,
-                    left: 0,
-                    behavior: "smooth",
-                });
-            } else if (r > winHeight / 2) {
-                check = true;
-                frameDiv.scrollTo({
-                    top: p * winHeight,
-                    left: 0,
-                    behavior: "smooth",
-                });
-            }
-            if (check) {
-                if (p % 2 != 0) {
-                    let left = window.innerWidth;
-                    let top = window.innerWidth;
-                    // ob.style.transform = "scale(2) translateX(200px)";
-                    // el1.style.transform = `rotate(-90deg) translate(-${top - 240}px,${left - 130}px)`;
-                    // el2.style.transform = `rotate(90deg) translate(${top - 240}px,-${left - 130}px)`
-                } else {
-                    // ob.style.transform = "scale(1) translateX(0)";
-                    // el1.style.transform = "rotate(0deg) translate(0px,0px)";
-                    // el2.style.transform = "rotate(0deg) translate(0px,0px)"
-                }
-            }
-        });
-
-        // const ball = document.getElementsByClassName('ball');
-        // const container = document.getElementById('ballsCon');
-        // let positions = [
-        //     {x:50,y:50,dx:2.5,dy:3},
-        //     {x:500,y:555,dx:2.5,dy:3},
-        //     {x:600,y:110,dx:2.5,dy:3},
-        //     {x:0,y:140,dx:2.5,dy:3},
-        // ]
-        // const ballWidth = [];
-        // const ballHeight = [];
-        // for(let i = 0; i< ball.length; i++){
-        //     ballWidth.push(ball[i].offsetWidth);
-        //     ballHeight.push(ball[i].offsetHeight);
-        // };
-        // // const ballWidth = ball.offsetWidth;
-        // // const ballHeight = ball.offsetHeight;
-        // const containerWidth = container.offsetWidth;
-        // const containerHeight = container.offsetHeight;
-
-        // function animate() {
-        //     // Update position
-        //     for(let i = 0; i< positions.length; i++){
-        //         let x = positions[i].x;
-        //         let y = positions[i].y;
-        //         let dx = positions[i].dx;
-        //         let dy = positions[i].dy;
-        //         x += dx;
-        //         y += dy;
-
-        //         // Check for horizontal collisions
-        //         if (x < 0) {
-        //             x = 0;
-        //             dx = -dx;
-        //         } else if (x > containerWidth - ballWidth[i]) {
-        //             x = containerWidth - ballWidth[i];
-        //             dx = -dx;
-        //         }
-        //         // Check for vertical collisions
-        //         if (y < 0) {
-        //             y = 0;
-        //             dy = -dy;
-        //         } else if (y > containerHeight - ballHeight[i]) {
-        //             y = containerHeight - ballHeight[i];
-        //             dy = -dy;
-        //         }
-
-        //         for(let j = 0;j < positions.length; j++){
-        //             if (i == j){
-        //                 continue;
-        //             }
-        //             if (x + ballWidth[j] > positions[j].x &&
-        //                 x < positions[j].x &&
-        //                 y + ballHeight[j] > positions[j].y &&
-        //                 y < positions[j].y
-        //             ){
-        //                 // positions[j].x = x + ballWidth[j];
-        //                 positions[j].dx = -positions[j].dx;
-        //                 // x -= dx;
-        //                 dx = -dx;
-
-        //                 // positions[j].y = y + ballHeight[j];
-        //                 positions[j].dy = -positions[j].dy;
-        //                 // y -= dy;
-        //                 dy = -dy;
-        //             }
-        //             if (
-        //                 x - ballWidth[j] < positions[j].x &&
-        //                 x > positions[j].x &&
-        //                 y + ballHeight[j] < positions[j].y &&
-        //                 y > positions[j].y
-        //             ){
-        //                 // positions[j].x = x - ballWidth[j];
-        //                 positions[j].dx = -positions[j].dx;
-        //                 // x -= dx;
-        //                 dx = -dx;
-
-        //                 // positions[j].y = y - ballHeight[j];
-        //                 positions[j].dy = -positions[j].dy;
-        //                 // y -= dy;
-        //                 dy = -dy;
-        //             }
-        //         }
-
-        //         positions[i].x = x;
-        //         positions[i].y = y;
-        //         positions[i].dx = dx;
-        //         positions[i].dy = dy;
-        //         ball[i].style.left = positions[i].x + "px";
-        //         ball[i].style.top = positions[i].y + "px"
-        //     }
-        //     requestAnimationFrame(animate);
-        // }
-
-        // // Start the animation
-        // animate();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         function goonprofile() {
