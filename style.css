@@ -71,6 +71,7 @@ body {
     margin: auto 20px;
     width: fit-content;
     display: inline-flex;
+    z-index: 100;
 }
 
 .navUlContact img {
@@ -97,30 +98,30 @@ body {
     font-weight: 500;
     font-size: large;
     font-family: fantasy;
-    display: block;
     width: fit-content;
     padding: 5px 20px;
     color: black;
     position: absolute;
     background-color: white;
+    z-index: -1;
+    transform: scale(0);
+    right: 0;
 }
 
 .navUlContact .email {
-    right: -278px;
-    transition: right 1s;
+    transition: transform 1s;
 }
 
 .navUlContact .phonenumber {
-    right: -164px;
-    transition: right 1s;
+    transition: transform 1s;
 }
 
 #emailLi:hover .email {
-    right: 0;
+    transform: scale(1);
 }
 
 #phonenumberLi:hover .phonenumber {
-    right: 0;
+    transform: scale(1);
 }
 
 .introdiv {
@@ -155,6 +156,7 @@ body {
     flex-direction: column;
     flex-wrap: nowrap;
     right: 50%;
+    bottom: 5px;
     animation: scrollIndicatorIcon 1s linear 1s infinite;
 }
 @keyframes scrollIndicatorIcon {
