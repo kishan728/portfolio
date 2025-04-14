@@ -9,7 +9,6 @@
 </head>
 
 <body>
-    
     <nav id="navdiv">
         <ul class="navul">
             <li onclick="goonprofile()">Profile</li>
@@ -19,10 +18,22 @@
         <ul class="navUlContact">
             <li id="emailLi" onclick="copy('kishansingh222004@gmail.com')">
                 <a href="mailto:kishansingh4020780@gmail.com"><img src="images/email (1).png"></a>
+                <p class="email contactDetails">kishansingh222004@gmail.com</p>
             </li>
             <li id="phonenumberLi" onclick="copy('9056969578')">
                 <a href="tel:+919056969578"> 
                     <img src="images/phone-call.png">
+                </a>
+                <p class="phonenumber contactDetails">+919056969578</p>
+            </li>
+            <li>
+                <a aria-label="Chat on WhatsApp" href="https://wa.me/919056969578"> 
+                    <img alt="Chat on WhatsApp" src="images/whatsapp.png" />
+                </a>
+            </li>
+            <li>
+                <a aria-label="Chat on WhatsApp" href="https://www.linkedin.com/in/usr-kishan/"> 
+                    <img alt="Linkedin" src="images/linkedin (1).png" />
                 </a>
             </li>
         </ul>
@@ -43,10 +54,10 @@
                 <h2 id="welcome">WELCOME</h2>
                 <p id="intro" >Self-taught full stack/backend developer with a strong foundation in ethical
                     hacking, networking, and scripting since 2020. With a deep interest in web application security and
-                    system internals, I transitioned into full stackdevelopment—strengthening my skills in backend,
+                    system internals, I transitioned into full stack development—strengthening my skills in backend,
                     database, and frontend technologies. My hacking background enables me to build secure, efficient
                     APIs
-                    and applications with a solid understanding of vulnerabilities andsystem architecture. Passionate
+                    and applications with a solid understanding of vulnerabilities and  system architecture. Passionate
                     about creating clean, maintainable, and scalable solutions.</p>
                     
             </div>
@@ -313,16 +324,16 @@
         }
         
 
-        let emailEl = document.createElement("p");
-        emailEl.className = "email contactDetails";
-        emailEl.innerText = "kishansingh222004@gmail.com";
-        document.getElementById("emailLi").appendChild(emailEl);
+        // let emailEl = document.createElement("p");
+        // emailEl.className = "email contactDetails";
+        // emailEl.innerText = "kishansingh222004@gmail.com";
+        // document.getElementById("emailLi").appendChild(emailEl);
 
         
-        let numberEl = document.createElement("p");
-        numberEl.className = "phonenumber contactDetails";
-        numberEl.innerText = "9056969578";
-        document.getElementById("phonenumberLi").appendChild(numberEl);
+        // let numberEl = document.createElement("p");
+        // numberEl.className = "phonenumber contactDetails";
+        // numberEl.innerText = "9056969578";
+        // document.getElementById("phonenumberLi").appendChild(numberEl);
     </script>
 </body>
 
